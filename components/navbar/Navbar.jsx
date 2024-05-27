@@ -12,7 +12,7 @@ const Navbar = () => {
   // console.log(isOpen?'true':'false')
   return (
     <header className='overscroll-none relative nothing-here-in-md '>
-      <div className={` transition-all duration-300 ease-in-out ${isOpen? '  fixed  bottom-0 h-[100vh] w-full bg-black z-[1000] opacity-100':' w-full  z-[1000] fixed  top-0 py-3.5 px-3  mx-auto gradient flex  justify-between items-center'}       `}>
+      <div className={` transition-all duration-300 ease-in-out ${isOpen? '  fixed  bottom-0 h-[100dvh] w-full bg-black z-[1000] opacity-100':' w-full  z-[1000] fixed  top-0 py-3.5 px-3  mx-auto gradient flex  justify-between items-center'}       `}>
         <nav className={`  ${isOpen?'flex flex-col h-[100%] gap-[4rem] ':'w-full md:bgblack flex md:justify-between'}`}>
           <div className={`${isOpen? 'flex flex-col-reverse justify-between basis-[20%] mt-4 ': ' m-0 flex w-full flex-row justify-between md:basis-[15%]'}`}>
             <Image className={`${isOpen? 'mx-auto':'mx-0'} `}src={logo} alt=''/>
