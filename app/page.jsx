@@ -30,7 +30,7 @@ const Home = () => {
       <section>
         <div className="section ">
           <h1 className='text-2xl text-black font-semibold text-center mb-7 '>Bring your restaurant <span className='block'>business online</span></h1>
-          <p className='text-center'>Tap into digital demand and enable contactless & frictionless ordering experiences in your branding in no time. Prove return on investment with digital ordering by experiencing more direct sales, lower margins & increased retention.</p>
+          <p className='text-center m'>Tap into digital demand and enable contactless & frictionless ordering experiences in your branding in no time. Prove return on investment with digital ordering by experiencing more direct sales, lower margins & increased retention.</p>
         </div>
       </section>
       <section className='my-[5rem]'>
