@@ -9,6 +9,9 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.overflow-hidden{
+  overflow: hidden;
+}
 .button{
   @apply bg-orange text-white rounded-3xl cursor-pointer
 }
