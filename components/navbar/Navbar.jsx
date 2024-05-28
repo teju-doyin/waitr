@@ -46,7 +46,7 @@ const Navbar = () => {
               <Image
                 onClick={handleMenu}
                 width={22}
-                className="cursor-pointer transition-opacity duration-300 opacity-100 mr-5"
+                className="cursor-pointer transition-opacity duration-300 opacity-100 "
                 src={close}
                 alt="Close menu"
                 style={{ display: isOpen ? 'block' : 'none' }}
