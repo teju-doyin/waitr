@@ -21,7 +21,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       <div className='' >
-        <section className=' nav h-[50dvh] md:h-[65dvh] '>
+        <section className=' nav h-[50lvh] md:h-[65dvh] '>
           {/* <Image className='w-full  ' src={heroImage} alt=''/> */}
           <div className="md:pl-7 md:gap-9  flex flex-col ml-3 gap-5 w-[15rem] md:w-[20rem] h-[85%] justify-end">
             <h2 className=' text-2xl font-bold text-white mt-auto md:text-3xl'>Improve your customer&apos;s experience with a QR menu</h2>
