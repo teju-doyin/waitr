@@ -72,7 +72,7 @@ const Home = () => {
                     <div className="images flex flex-col items-center gap-2 md:flex-row">
                       <Image className='' src={scanRestaurant} alt=''/>
                       <Image className='md:hidden' src={verticalLine} alt=''/>
-                      <Image className=' w-[60%]'  src={horizontalLine} alt=''/>
+                      <Image className='hidden md:block md:w-[60%]'  src={horizontalLine} alt=''/>
                     </div>
                     <p className='font-semibold max-w-[14rem] relative top-[-5px]  '>Place the QR code on each table.</p>
                   </div>
@@ -80,7 +80,7 @@ const Home = () => {
                     <div className="images flex flex-col items-center gap-2 md:flex-row">
                       <Image className='' src={pot} alt=''/>
                       <Image className='md:hidden' src={verticalLine} alt=''/>
-                      <Image className='w-[60%]'  src={horizontalLine} alt=''/>
+                      <Image className=' hidden md:block md:w-[60%]'  src={horizontalLine} alt=''/>
                     </div>
                     <p className='font-semibold max-w-[14rem] relative top-[-5px] '>Receive and prepare orders efficiently.</p>
                   </div>
