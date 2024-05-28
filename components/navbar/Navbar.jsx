@@ -28,9 +28,9 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <header className="overscroll-none relative w-full">
-      <div className="fixed top-0 w-full z-50 py-3.5 px-3 mx-auto gradient md:bg-none flex justify-between items-center">
-        <div className="flex justify-between items-center w-full md:basis-[30%]">
+    <header className="overscroll-none  w-full">
+      <div className=" md:px-7 fixed top-0 w-full z-50 py-3.5 px-3 mx-auto gradient md:bg-none flex justify-between items-center">
+        <div className="flex  justify-between items-center w-full md:basis-[30%]">
           <Image className={`${isOpen? ' transition-opacity duration-300 opacity-0':''}`}src={logo} alt="Logo" />
           <div className="ml-auto md:hidden relative">
             {!isOpen && (

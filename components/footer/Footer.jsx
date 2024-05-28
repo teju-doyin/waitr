@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="section text-black">
-        <div className="mb-[2rem]">
+        <div className="mb-[2rem] md:flex md:justify-between md:basis-[30%]">
           <Image className='mb-4' src={logo} alt=''/>
-          <div className=" flex justify-between items-center">
+          <div className=" flex justify-between items-center md:basis-[58%]">
             <p className='text-[13px]'>Call: (+234) 703 957 4358</p>
             <div className="socials flex gap-2">
               <Image className='cursor-pointer' src={facebook} alt=''/>
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="horizontalLine my-6 bg-black h-[1px]"></div>
-        <div className=" flex flex-col-reverse gap-3 items-center ">
+        <div className=" flex flex-col-reverse gap-3 items-center md:flex-row md:justify-center">
           <p className='text-[13px]'>2023 Waitr. All rights reserved.</p>
           <div className="width-[100%] links flex justify-between items-center gap-3">
             <Link className='footer-links' href="/privacy-policy">Privacy Policy</Link>
