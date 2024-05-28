@@ -19,10 +19,10 @@ import Link from 'next/link'
 const Home = () => {
   return (
     <div className=' overflow-x-hidden' >
-      <section className='nav h-[50vh] '>
-        {/* <Image className='' src={heroImage} alt=''/> */}
-        <div className="flex flex-col ml-3 gap-5 w-[15rem] h-[85%] justify-end">
-          <h2 className=' text-2xl font-bold text-white mt-auto'>Improve your customer&apos;s experience with a QR menu</h2>
+      <section className='relative '>
+        <Image className='w-full' src={heroImage} alt=''/>
+        <div className="absolute top-0 flex flex-col ml-3 gap-5 w-[15rem] h-[85%] justify-end">
+          <h2 className=' text-2xl font-bold text-white mt-auto'>Improvee your customer&apos;s experience with a QR menu</h2>
           <Link href="/notFound" className='button get-started text-center montserrat register-hover'>Get Started</Link>
         </div>
       </section>
