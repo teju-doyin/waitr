@@ -1,47 +1,90 @@
 'use client';
-import React, { useState,useEffect  } from 'react'
-import Image from 'next/image'
-import logo from '@/public/logo.svg'
-import close from '@/public/close.svg'
-import mobileMenu from '@/public/mobile-menu.svg'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import logo from '@/public/logo.svg';
+import close from '@/public/close.svg';
+import mobileMenu from '@/public/mobile-menu.svg';
+import Link from 'next/link';
+
 const Navbar = () => {
-  const [isOpen, setIsOpen]= useState(false)
-  const handleOpenMenu=()=> setIsOpen(!isOpen)
-  const handleCloseMenu=()=> setIsOpen(!isOpen)
-  // console.log(isOpen?'true':'false')
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenu = () => setIsOpen(!isOpen)
+  const closeMenuOnResize = () => {
+    if (window.innerWidth >= 768) { // Tailwind's md breakpoint
+      setIsOpen(false);
+    }
+  }
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
     }
+    window.addEventListener('resize', closeMenuOnResize);
+    return () => {
+      window.removeEventListener('resize', closeMenuOnResize);
+    }
   }, [isOpen]);
+
   return (
-    
-    <header className='overscroll-none relative nothing-here-in-md '>
-      <div className={` transition-all duration-300 ease-in-out ${isOpen? '  fixed  bottom-0 h-[100dvh] w-full bg-black z-[1000] opacity-100':' w-full  z-[1000] fixed  top-0 py-3.5 px-3  mx-auto gradient flex  justify-between items-center'}       `}>
-        <nav className={`  ${isOpen?'flex flex-col h-[100%] gap-[4rem] ':'w-full md:bgblack flex md:justify-between'}`}>
-          <div className={`${isOpen? 'flex flex-col-reverse justify-between basis-[20%] mt-4 ': ' m-0 flex w-full flex-row justify-between md:basis-[15%]'}`}>
-            <Image className={`${isOpen? 'mx-auto':'mx-0'} `}src={logo} alt=''/>
-            <div className="ml-auto   md:hidden mobile-navs">
-              {!isOpen &&<Image onClick={handleOpenMenu } className= ' cursor-pointer' src={mobileMenu} alt=''/>}
-              {isOpen && <Image onClick={handleCloseMenu} width={40} className='pr-5 pt-2 cursor-pointer' src={close} alt=''/>}
-              
-            </div>
+    <header className="overscroll-none relative w-full">
+      <div className="fixed top-0 w-full z-50 py-3.5 px-3 mx-auto gradient md:bg-none flex justify-between items-center">
+        <div className="flex justify-between items-center w-full md:basis-[30%]">
+          <Image className={`${isOpen? ' transition-opacity duration-300 opacity-0':''}`}src={logo} alt="Logo" />
+          <div className="ml-auto md:hidden relative">
+            {!isOpen && (
+              <Image
+                onClick={handleMenu}
+                className="cursor-pointer transition-opacity duration-300 opacity-100"
+                src={mobileMenu}
+                alt="Open menu"
+                style={{ display: isOpen ? 'none' : 'block' }}
+              />
+            )}
+            {isOpen && (
+              <Image
+                onClick={handleMenu}
+                width={22}
+                className="cursor-pointer transition-opacity duration-300 opacity-100 mr-5"
+                src={close}
+                alt="Close menu"
+                style={{ display: isOpen ? 'block' : 'none' }}
+              />
+            )}
           </div>
-          <div className={`${isOpen?'flex flex-col basis-[40%] gap-8 justify-center items-center  md: nav-links  ':'hidden md:flex md:gap-2 md:basis-[70%] md:max-w-[550px] md:items-center'}`}>
-            <p className='text-white flex-none '>Call: (+234) 703 957 4358</p>
-            <div className="flex-grow flex flex-col gap-5 justify-center  md:flex-row md:gap-3 md:justify-end items-center ">
-              <Link className=' cursor-pointer text-center w-[70%] mx-auto  text-orange border px-4 py-1.5 rounded-3xl border-orange md:mx-0 md:w-[30%] ' href="/sign-in">Sign in</Link>
-              <Link className=' button py-2 px-4 ' href="/register">Register, it&apos;s FREE</Link>
-            </div>
+        </div>
+        <nav className="hidden md:flex gap-4 md:items-center">
+          <p className="text-white">Call: (+234) 703 957 4358</p>
+          <div className="flex gap-4">
+            <Link className="text-orange border border-orange px-4 py-1.5 rounded-3xl sign-in-hover" href="/sign-in">
+              Sign in
+            </Link>
+            <Link className="bg-orange text-white px-4 py-2 rounded-3xl register-hover" href="/register">
+              Register, it&apos;s FREE
+            </Link>
           </div>
         </nav>
       </div>
-    </header>
-  )
-}
-//fixed  top-0 py-3.5 px-3 w-full mx-auto gradient flex  justify-between items-center
 
-export default Navbar
+
+      <div
+        className={`fixed inset-0 z-40 bg-black  transform transition-transform duration-500 ease-in-out ${
+          isOpen ? 'translate-x-0' : 'translate-x-full md:'
+        }`}
+      >
+        <div className={` md:hidden space-y-8 transition-transform duration-500 ease-in-out  ${isOpen?'  flex relative top-[20dvh] flex-col  gap-16 justify-center items-center  transform translate-x-0 opacity-100 ':'transform translate-x-full opacity-0  md:flex md:gap-2 md:basis-[70%] md:max-w-[550px] md:items-center'}`}>
+        
+          <Image src={logo} alt="Logo" />
+          <p className='text-white flex-none  '>Call: (+234) 703 957 4358</p>
+          <div className="flex-grow flex flex-col gap-5 justify-center  md:flex-row md:gap-3 md:justify-end items-center ">
+            <Link className=' cursor-pointer text-center w-[70%] mx-auto  text-orange border px-4 py-1.5 rounded-3xl border-orange md:mx-0 md:w-[30%] sign-in-hover' href="/sign-in">Sign in</Link>
+            <Link className=' button py-2 px-4 register-hover' href="/register">Register, it&apos;s FREE</Link>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Navbar;

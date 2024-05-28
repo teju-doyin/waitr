@@ -19,18 +19,18 @@ import Link from 'next/link'
 const Home = () => {
   return (
     <div className=' overflow-x-hidden' >
-      <section className='nav h-[60vh] '>
+      <section className='nav h-[50vh] '>
         {/* <Image className='' src={heroImage} alt=''/> */}
-        <div className="flex flex-col ml-3 gap-5 w-[15rem] h-[95%] justify-end">
+        <div className="flex flex-col ml-3 gap-5 w-[15rem] h-[85%] justify-end">
           <h2 className=' text-2xl font-bold text-white mt-auto'>Improve your customer&apos;s experience with a QR menu</h2>
-          <Link href="/notFound" className='button get-started text-center montserrat'>Get Started</Link>
+          <Link href="/notFound" className='button get-started text-center montserrat register-hover'>Get Started</Link>
         </div>
       </section>
       
       <section>
         <div className="section ">
           <h1 className='text-2xl text-black font-semibold text-center mb-7 '>Bring your restaurant <span className='block'>business online</span></h1>
-          <p className='text-center m'>Tap into digital demand and enable contactless & frictionless ordering experiences in your branding in no time. Prove return on investment with digital ordering by experiencing more direct sales, lower margins & increased retention.</p>
+          <p className='text-center max-w-[35rem] mx-auto'>Tap into digital demand and enable contactless & frictionless ordering experiences in your branding in no time. Prove return on investment with digital ordering by experiencing more direct sales, lower margins & increased retention.</p>
         </div>
       </section>
       <section className='my-[5rem]'>
@@ -39,7 +39,7 @@ const Home = () => {
           <div className=" ">
             <h2 className=' text-2xl font-semibold mb-[1rem] text-black'>Customize your Menu</h2>
             <p className='mb-[2rem] text-black'>Adding your logo and customizing your menu allows your Free Digital Menu not only visually appealing but also a dynamic and ever-evolving representation of your culinary offerings. Your menu becomes an interactive and engaging tool to entice and satisfy your customers.</p>
-            <Link href="/get-started" className='button get-started'>Get Started</Link>
+            <Link href="/get-started" className='button get-started register-hover'>Get Started</Link>
           </div>
         </div>
       </section>
@@ -49,7 +49,7 @@ const Home = () => {
           <div className="">
             <h2 className='text-2xl font-semibold mb-[1rem] text-black'>Instant Update</h2>
             <p className='mb-[2rem] text-black'>Edit your Free Digital Menu at anytime. Our dynamic QR Code allows for real-time price changes, menu item availability or substitutions. So your customers will always have access to an accurate and current digital menu.</p>
-            <Link href='/get-started' className='button get-started'>Get Started</Link>
+            <Link href='/get-started' className='button get-started register-hover'>Get Started</Link>
           </div>
         </div>
       </section>
@@ -124,17 +124,17 @@ const Home = () => {
       </section>
       
       <section class="">
-        <div class="relative w-full max-w-2xl  py-14 px-6 mx-auto text-center">
+        <div class="relative w-full  py-14 px-6 mx-auto text-center">
           {/* <!-- Background Image --> */}
           <div class="absolute inset-0 z-0">
             <Image src={bottomBg} alt="Background" className="object-cover w-full h-full filter blur-sm"/>
             <div class="absolute inset-0 bg-orange opacity-50"></div>
           </div>
           
-          {/* <!-- Text Content --> */}
-          <div class="relative z-10 text-white  w-[90%] h-[100%]  mx-auto flex flex-col justify-center gap-7  items-center">
+          
+          <div class="relative z-10 text-white  w-[90%] h-[100%] max-w-[300px] mx-auto flex flex-col justify-center gap-7  items-center">
             <p class="text-2xl font-bold text-center ">Take your restaurant to the next level with QR menu solution</p>
-            <Link className=' rounded-3xl cursor-pointer bg-white text-black py-2 px-4 ' href="/register">Register, it&apos;s FREE</Link>
+            <Link className=' rounded-3xl cursor-pointer bg-white text-black py-2 px-4 register-hover hover:text-white hover:border-white' href="/register">Register, it&apos;s FREE</Link>
           </div>
         </div>
       </section>

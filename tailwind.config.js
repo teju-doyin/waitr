@@ -11,6 +11,10 @@ module.exports = {
         'orange':'#FE9D1A',
         'black':'#21232A',
         'light-pink':'#FFF5E8'
+      },
+      transform: {
+        'translate-x-full': 'translateX(100%)',
+        'translate-x-none': 'translateX(0%)',
       }
     },
   },

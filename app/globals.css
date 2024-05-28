@@ -49,8 +49,14 @@
   @apply w-[8rem] px-4 py-3
 }
 .img{
-  @apply max-w-[100%]
+  @apply max-w-[100%] w-full
 }
 .black{
   @apply text-black
+}
+.register-hover{
+ @apply border border-transparent transition-all hover:font-medium  focus:outline-none duration-300 delay-100 ease-in-out   hover:bg-transparent hover:border hover:border-[#FE9D1A] hover:text-[#FE9D1A]
+}
+.sign-in-hover{
+ @apply  transition-all  focus:outline-none duration-300 delay-100 ease-in-out   hover:bg-[#FE9D1A] hover:text-white
 }
