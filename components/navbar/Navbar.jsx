@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isTooltipVisible, setIsTooltipVisible] = useState(false)
   const handleMenu = () => setIsOpen(!isOpen)
   const closeMenuOnResize = () => {
     if (window.innerWidth >= 768) { // Tailwind's md breakpoint
@@ -31,7 +31,18 @@ const Navbar = () => {
     <header className="overscroll-none  w-full">
       <div className=" md:px-7 fixed top-0 w-full z-50 py-3.5 px-3 mx-auto gradient md:bg-none flex justify-between items-center">
         <div className="flex  justify-between items-center w-full md:basis-[30%]">
-          <Image className={`${isOpen? ' transition-opacity duration-300 opacity-0':''}`}src={logo} alt="Logo" />
+          <div className="relative"
+            onMouseEnter={()=> setIsTooltipVisible(true)}
+            onMouseLeave={()=> setIsTooltipVisible(false)}>
+          
+            <Image className={` cursor-pointer${isOpen? ' transition-opacity duration-300 opacity-0':''}`}src={logo} alt="Logo" />
+            <div className={`absolute top-1/2 left-full transform -translate-y-1/2 ml-2 transition-opacity duration-100 ${isTooltipVisible ? 'opacity-100 delay-150' : 'opacity-0'}`}>
+                <div className="relative bg-black text-white text-sm px-2 py-1 rounded">
+                  Scan to Order System for Restaurants & Hotels
+                  <div className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-full w-0 h-0 border-t-4 border-t-transparent border-b-4 border-b-transparent border-r-4 border-r-black"></div>
+                </div>
+            </div>
+         </div>
           <div className="ml-auto md:hidden relative">
             {!isOpen && (
               <Image
