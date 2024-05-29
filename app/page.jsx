@@ -25,7 +25,7 @@ const Home = () => {
       <div className='' >
         <section className=' nav h-[50lvh] lg:h-[100dvh] '>
           {/* <Image className='w-full  ' src={heroImage} alt=''/> */}
-          <div className="lg:pl-7 lg:gap-9 flex flex-col ml-5 lg:ml-8 gap-5 w-[15rem] lg:w-[50rem] h-[85%] md:h-[95%]  justify-end">
+          <div className="lg:pl-7 lg:gap-9 flex flex-col ml-5 lg:ml-8 gap-5 w-[15rem] lg:w-[50rem] h-[85%] lg:h-[95%]  justify-end">
             <h2 className=' text-2xl font-bold text-white mt-auto lg:text-[4.7rem] lg:leading-snug'>Improve your customer&apos;s experience with a QR menu</h2>
             <Link href="/notFound" className='button get-started  text-center montserrat register-hover'>Get Started</Link>
           </div>
