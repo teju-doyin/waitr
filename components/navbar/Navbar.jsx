@@ -35,8 +35,8 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-    <header className={`overscroll-none  fixed top-0 w-full   ${isScrolled ? 'md:bg-black ' : 'bg-transparent'} transition-colors duration-500`}>
-      <div className='md:px-7  top-0 w-full z-50 py-3.5 px-3 mx-uto gradient  md:bg-none flex justify-between items-center'>
+    <header className={`overscroll-none z-[1000] fixed top-0 w-full   ${isScrolled ? 'md:bg-black ' : 'bg-transparent'} transition-colors duration-500`}>
+      <div className='md:px-7  top-0 w-full  py-3.5 px-3 mx-uto gradient  md:bg-none flex justify-between items-center'>
         <div className="flex  justify-between items-center w-full md:basis-[30%]">
           <Image className={` cursor-pointer${isOpen ? ' transition-opacity duration-300 opacity-0' : ''}`} src={logo} alt="Logo" />
 
