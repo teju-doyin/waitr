@@ -12,7 +12,8 @@ import phone from '@/public/phone.svg'
 import pot from '@/public/pot.svg'
 import rating from '@/public/rating-icon.svg'
 import phoneIcon from '@/public/phone-icon.svg'
-
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
 import chart from '@/public/chart.svg'
 import customizeMenu from '@/public/customize-menu.svg'
 import instantUpdate from '@/public/instant-update.svg'
@@ -20,6 +21,7 @@ import Link from 'next/link'
 const Home = () => {
   return (
     <div className="overflow-x-hidden">
+       <Navbar />
       <div className='' >
         <section className=' nav h-[50lvh] lg:h-[100dvh] '>
           {/* <Image className='w-full  ' src={heroImage} alt=''/> */}
@@ -147,6 +149,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <Footer/>
     </div>
   )
 }
