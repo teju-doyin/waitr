@@ -23,7 +23,7 @@ const Home = () => {
     <div className="overflow-x-hidden">
        <Navbar />
       <div className='' >
-        <section className=' nav h-[50lvh] lg:h-[100dvh] '>
+        <section className='nav h-[50lvh] lg:h-[100dvh] '>
           {/* <Image className='w-full  ' src={heroImage} alt=''/> */}
           <div className="lg:pl-7 lg:gap-5 flex flex-col ml-5 lg:ml-8 gap-5 w-[15rem] lg:w-[40rem] h-[85%] lg:h-[90%]  justify-end">
             <h2 className=' text-2xl font-semibold leading-none text-white mt-auto lg:text-[4rem] '>Improve your customer&apos;s experience with a QR menu</h2>
